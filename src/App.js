@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello visitor!
+          App builded using Github flow and CI in a feature branch.
         </p>
         <a
           className="App-link"
