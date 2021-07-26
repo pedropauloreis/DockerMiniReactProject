@@ -10,5 +10,16 @@ before_install:
   - docker build -t ppreis/docker-mini-react-project -f Dockerfile.dev .
 
 script:
-  - 
   - docker run -e CI=true ppreis/docker-mini-react-project npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "docker-mini-react-project"
+  env: "Dockerminireactproject-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-393726823884"
+  bucket_path: "docker-mini-react-project"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
