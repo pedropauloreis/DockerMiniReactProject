@@ -12,6 +12,7 @@ before_install:
 script:
   - docker run -e CI=true ppreis/docker-mini-react-project npm run test
 
+
 deploy:
   provider: elasticbeanstalk
   region: "eu-central-1"
